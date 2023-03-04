@@ -1,5 +1,11 @@
+import Todo from "./pages/Todo.page";
+
 function App() {
-  return <>App</>;
+  return (
+    <>
+      <Todo />
+    </>
+  );
 }
 
 export default App;
