@@ -1,13 +1,15 @@
-import VTodo from "./VTodo.page";
-
-import { useTodoList } from "~/queries/todo/useTodoList";
+import TodoInput from "~/components/TodoInput";
+import TodoList from "~/components/TodoList";
 
 const Todo = () => {
-  const { data: todoListData } = useTodoList();
-
   return (
     <>
-      <VTodo list={todoListData} />
+      <div>
+        <h1>To Do List</h1>
+
+        <TodoInput />
+        <TodoList />
+      </div>
     </>
   );
 };

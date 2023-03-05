@@ -1,16 +1,12 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-export type Todo = {
-  id: number;
-  value: string;
-  checked: boolean;
-};
+import { TodoValues } from "~/types/Todo";
 
 export const useTodoList = () => {
   return useQuery(
     ["TODO", "todos"],
-    () => axios.get<{ data: Todo[] }>("/api/todos"),
+    () => axios.get<{ data: TodoValues[] }>("/api/todos"),
     {
       select: ({ data }) => data?.data,
     }

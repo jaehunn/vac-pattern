@@ -1,12 +1,15 @@
+import { ComponentProps, useCallback } from "react";
+
 import VTodoList from "./VTodoList";
 
-type Props = {
-  //
-};
+import { useTodoList } from "~/queries/todo/useTodoList.get";
+import { TodoValues } from "~/types/Todo";
 
 const TodoList = () => {
-  const todoListProps = {
-    //
+  const { data } = useTodoList();
+
+  const todoListProps: ComponentProps<typeof VTodoList> = {
+    data,
   };
 
   return (
